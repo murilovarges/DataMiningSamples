@@ -30,6 +30,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="0-Datasets\BritishLibraryBooks.csv" />
+    <Content Include="0-Datasets\Mamo.data" />
+    <Content Include="0-Datasets\Mamo.names" />
     <Content Include="0-Datasets\UniversityTowns.txt" />
     <Content Include="0-Datasets\WinterOlympics.csv" />
   </ItemGroup>

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c24e8795-a369-4777-8772-b52df6c399e6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>1-Preprocessing\DataReduction.py</StartupFile>
+    <StartupFile>1-Preprocessing\DataNormalization.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="1-Preprocessing\DataCleaning.py" />
+    <Compile Include="1-Preprocessing\DataNormalization.py" />
     <Compile Include="1-Preprocessing\DataReduction.py" />
   </ItemGroup>
   <ItemGroup>

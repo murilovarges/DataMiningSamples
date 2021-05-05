@@ -5,6 +5,8 @@ from scipy.spatial.distance import cdist
 from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.metrics import silhouette_samples
 import matplotlib.pyplot as plt
  
 #Defining our kmeans function from scratch
@@ -82,6 +84,10 @@ def main():
 
     #Applying sklearn kemans function
     kmeans = KMeans(n_clusters=10, random_state=0).fit(projected)
+    print(kmeans.inertia_)
+    centers = kmeans.cluster_centers_
+    score = silhouette_score(projected, kmeans.labels_)    
+    print("For n_clusters = {}, silhouette score is {})".format(10, score))
 
     #Visualize the results sklearn
     plot_samples(projected, kmeans.labels_, 'Clusters Labels KMeans from sklearn')

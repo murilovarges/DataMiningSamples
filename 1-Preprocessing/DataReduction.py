@@ -16,7 +16,7 @@ def main():
 
     # Separating out the features
     x = df.loc[:, features].values
-    
+
     # Separating out the target
     y = df.loc[:,[target]].values
 

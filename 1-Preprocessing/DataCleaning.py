@@ -7,10 +7,10 @@ def main():
     features = ['Age','Shape','Margin','Density','Severity']
     output_file = '0-Datasets/MamoClear.data'
     input_file = '0-Datasets/Mamo.data'
-    df = pd.read_csv(input_file, # Nome do arquivo com dados
-                     names = names, # Nome das colunas 
+    df = pd.read_csv(input_file,         # Nome do arquivo com dados
+                     names = names,      # Nome das colunas 
                      usecols = features, # Define as colunas que serão  utilizadas
-                     na_values='?') # Define que ? será considerado valores ausentes
+                     na_values='?')      # Define que ? será considerado valores ausentes
     
     df_original = df.copy()
     # Imprime as 15 primeiras linhas do arquivo
@@ -31,21 +31,15 @@ def main():
     # Imprime a quantidade de valores faltantes por coluna
     print("VALORES FALTANTES\n")
     print(df.isnull().sum())
-    print("\n")
-    
-    # Tratando valores faltantes da coluna Density
-    print("VALORES FALTANTES DA COLUNA Density\n")
-    print('Total valores ausentes: ' + str(df['Density'].isnull().sum()))
-
+    print("\n")    
     
     columns_missing_value = df.columns[df.isnull().any()]
     print(columns_missing_value)
     method = 'mode' # number or median or mean or mode
     
     for c in columns_missing_value:
-        UptateMissingvalue(df, c)
+        UpdateMissingValues(df, c)
     
-    print('Total valores ausentes: ' + str(df['Density'].isnull().sum()))
     print(df.describe())
     print("\n")
     print(df.head(15))
@@ -56,7 +50,7 @@ def main():
     df.to_csv(output_file, header=False, index=False)  
     
 
-def UptateMissingvalue(df, column, method="mode", number=0):
+def UpdateMissingValues(df, column, method="mode", number=0):
     if method == 'number':
         # Substituindo valores ausentes por um número
         df[column].fillna(number, inplace=True)

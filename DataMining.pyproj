@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c24e8795-a369-4777-8772-b52df6c399e6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>1-Preprocessing\DataNormalization.py</StartupFile>
+    <StartupFile>2-Clustering\Kmeans.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,10 +25,14 @@
     <Compile Include="1-Preprocessing\DataCleaning.py" />
     <Compile Include="1-Preprocessing\DataNormalization.py" />
     <Compile Include="1-Preprocessing\DataReduction.py" />
+    <Compile Include="2-Clustering\Kmeans.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="0-Datasets\" />
     <Folder Include="1-Preprocessing\" />
+    <Folder Include="2-Clustering\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="0-Datasets\BritishLibraryBooks.csv" />

@@ -77,13 +77,13 @@ def main():
     plot_samples(projected, digits.target, 'Original Labels')
  
     #Applying our kmeans function from scratch
-    labels = KMeans_scratch(projected,10,100)
+    labels = KMeans_scratch(projected,6,5)
     
     #Visualize the results 
     plot_samples(projected, labels, 'Clusters Labels KMeans from scratch')
 
     #Applying sklearn kemans function
-    kmeans = KMeans(n_clusters=10, random_state=0).fit(projected)
+    kmeans = KMeans(n_clusters=6).fit(projected)
     print(kmeans.inertia_)
     centers = kmeans.cluster_centers_
     score = silhouette_score(projected, kmeans.labels_)    

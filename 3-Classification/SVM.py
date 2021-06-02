@@ -66,7 +66,7 @@ def load_dataset(dataset='cancer'):
 
 def main():
     #load dataset
-    target_names, df = load_dataset('cancer')
+    target_names, df = load_dataset('iris')
 
     # Separate X and y data
     X = df.drop('target', axis=1)
@@ -84,14 +84,15 @@ def main():
     X_test = scaler.transform(X_test)
 
     # TESTS USING SVM classifier from sk-learn    
-    svm = SVC(kernel='linear') # poly, rbf, linear
+    svm = SVC(kernel='poly') # poly, rbf, linear
     # training using train dataset
     svm.fit(X_train, y_train)
     # get support vectors
-    # print(svm.support_vectors_)
+    print(svm.support_vectors_)
     # get indices of support vectors
-    # print(svm.support_)
+    print(svm.support_)
     # get number of support vectors for each class
+    print("Qtd Support vectors: ")
     print(svm.n_support_)
     # predict using test dataset
     y_hat_test = svm.predict(X_test)

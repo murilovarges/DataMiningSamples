@@ -25,6 +25,8 @@ def main():
     clf.fit(X_train, y_train)
     tree.plot_tree(clf)
     plt.show()
+    
+    
 
 
 if __name__ == "__main__":

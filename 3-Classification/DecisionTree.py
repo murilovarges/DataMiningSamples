@@ -10,19 +10,7 @@ def main():
     print(iris.target)
     X = iris.data
     y = iris.target
-
-    # Split the data - 75% train, 25% test
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)  # Load iris data and store in dataframe
-    iris = datasets.load_iris()
-    df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
-    df['target'] = iris.target
-    df.head()
-
-    # Separate X and y data
-    X = df.drop('target', axis=1)
-    y = df.target   
-    print("Total samples: {}".format(X.shape[0]))
-
+    
     # Split the data - 75% train, 25% test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)    
     iris = load_iris()

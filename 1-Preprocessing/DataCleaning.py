@@ -56,7 +56,7 @@ def UpdateMissingValues(df, column, method="mode", number=0):
         df[column].fillna(number, inplace=True)
     elif method == 'median':
         # Substituindo valores ausentes pela mediana 
-        median = df['Density'].median()
+        median = df[column].median()
         df[column].fillna(median, inplace=True)
     elif method == 'mean':
         # Substituindo valores ausentes pela média
